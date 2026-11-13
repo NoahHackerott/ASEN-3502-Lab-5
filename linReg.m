@@ -10,6 +10,8 @@ function [theta, r2] = linReg(x,y)
 %          - where a1 is slope
 %          - and a0 is y-intercept
 %   r2     - Coefficient of determination (R-squared)
+%
+% Team 2 :)
 
 
     % Determine number of data points
