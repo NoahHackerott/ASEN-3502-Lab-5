@@ -10,7 +10,7 @@ y = 3*x + 2;
 % Check to see if model satisfies
 tol = 1e-8;
 if abs(theta(1) - 2) > tol || abs(theta(2) - 3) > tol || abs(r2 - 1) > tol
-    error("Linear regression failed exact-line test")
+    error("Linear regression failed exact line test")
 end
 
 % Test 2: Points not on a line
@@ -20,7 +20,7 @@ x = [0 1 2 3];
 y = [1 0 3 2];
 [theta, r2] = linReg(x, y);
 if (abs(theta(1) - 0.6) > tol || abs(theta(2) - 0.6) > tol || abs(r2 - 0.36) > tol)
-    error("Linear regression model inaccurate for non-linear data")
+    error("Linear regression model inaccurate for non linear data")
 end
 
 disp("Linear regression successful");
