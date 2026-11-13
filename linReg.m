@@ -1,12 +1,36 @@
 function [theta, r2] = linReg(x,y)
+% LINREG Performs a linear regression using least squares
+%
+% Inputs:
+%   x      - Vector of independent variable
+%   y      - Vector of dependent variable
+%
+% Outputs:
+%   theta  - Regression coefficients [a1,a1]
+%          - where a1 is slope
+%          - and a0 is y-intercept
+%   r2     - Coefficient of determination (R-squared)
+
+
+    % Determine number of data points
     n = length(x);
+
+    % Convert input vectors to columns for consistency
     x = x(:);
     y = y(:);
+
+    % Calculate slope using least squares
     a1 = (n * sum(x.*y) - sum(x)*sum(y)) / (n * sum(x.^2) - sum(x).^2);
+    
+    % Calculate y-intercept
     a0 = (sum(y) - a1*sum(x)) / n;
+
+    % Store regression coefficient as [slope,intercept]
     theta = [a1,a0];
     
+    % Calculate mean squared of the difference of prediction and points
     J = (1/n) * sum((a1*x+a0-y).^2);
 
+    % Calculate r2
     r2 = 1 - (J / ((1/n)*sum((y-mean(y)).^2)));
 end
