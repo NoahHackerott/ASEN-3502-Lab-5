@@ -24,8 +24,6 @@ dataWindow = [tWindow.'; yWindow.'];
 % Recover them from the fitted line l that is returned
 a1 = (l(2,end) - l(2,1)) / (l(1,end) - l(1,1));   % [TECU/hr]
 a0 = l(2,1) - a1*l(1,1);                          % [TECU]
-fprintf("a0 = %.4f TECU\n", a0);
-fprintf("a1 = %.4f TECU/hr\n", a1);
 
 % Evaluate the model everywhere
 yhatDay = a0 + a1*t;
