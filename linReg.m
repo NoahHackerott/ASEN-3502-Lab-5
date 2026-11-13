@@ -6,7 +6,7 @@ function [theta, r2] = linReg(x,y)
 %   y      - Vector of dependent variable
 %
 % Outputs:
-%   theta  - Regression coefficients [a1,a1]
+%   theta  - Regression coefficients [a1,a0]
 %          - where a1 is slope
 %          - and a0 is y-intercept
 %   r2     - Coefficient of determination (R-squared)
