@@ -34,5 +34,5 @@ function J = gps_cost(theta, sats, P, iono)
     yhat = dist + b + iono(sats, trialPosition);   % nx1 (m)
 
     % Mean squared error
-    J = mean((yhat - y).^2);         % m^2
+    J = mean((yhat - y).^2); % m^2
 end
